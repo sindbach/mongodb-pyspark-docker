@@ -2,6 +2,8 @@
 
 An example of docker-compose to set up a single [Apache Spark](http://spark.apache.org/) node connecting to [MongoDB](https://www.mongodb.com/) via [MongoDB Spark Connector](https://github.com/mongodb/mongo-spark)
 
+For the Scala equivalent example see [mongodb-spark-docker](https://github.com/sindbach/mongodb-spark-docker).
+
 ** For demo purposes only **
 
 ### Starting up 
