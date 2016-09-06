@@ -21,6 +21,14 @@ df.printSchema()
 rdd = df.rdd 
 rdd.first()
 
+# Read through using aggregation pipeline
+pipeline = [{'$sort': {'timestamp': 1}},
+            {'$group':{'_id':{'myid':'$myid'}, 'record':{'$first':'$$ROOT'}}}, 
+            {'$project':{'_id':0, 'doc':'$record.doc', 'timestamp':'$record.timestamp', 'myid':'$record.myid'}}
+            ]
+df_pipeline = sqlContext.read.format("com.mongodb.spark.sql.DefaultSource").option("pipeline", pipeline).load()
+df_pipeline.first()
+
 # Filter by Integer and by String
 df.filter(df["myid"] < 2).show()
 df.filter(df["doc"] == "V ").show()
