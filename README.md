@@ -39,10 +39,10 @@ To set session wide option you can also specify:
 pyspark --conf "spark.mongodb.input.uri=mongodb://mongodb:27017/spark.times" --conf "spark.mongodb.output.uri=mongodb://mongodb/spark.output" --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} 
 ```
 
-You can also append `<file.py>` to execute a python file via pyspark. For example: 
+You can also append `<file.py>` to execute a python file via spark-submit. For example: 
 
 ```sh
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py 
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py 
 ```
 
 ### More Information. 

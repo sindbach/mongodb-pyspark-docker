@@ -1,12 +1,12 @@
 
 # set data : You can run use initDocuments.scala to import using Spark itself.
-pyspark  --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION}./initDocuments.py
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./initDocuments.py
 
 # Run spark-shell 
 pyspark --conf "spark.mongodb.input.uri=mongodb://mongodb:27017/spark.times" --conf "spark.mongodb.output.uri=mongodb://mongodb/spark.output" --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION}
 
 # Or you can run python file through the shell by specifying `<file.py>`. For example to run `examples.py`: 
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py
 
 
 # start 1 master/worker
