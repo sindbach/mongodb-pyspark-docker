@@ -6,6 +6,14 @@ For the Scala equivalent example see [mongodb-spark-docker](https://github.com/s
 
 ** For demo purposes only **
 
+#### Environment : 
+
+* Ubuntu v16.04
+* Apache Spark v2.0.1
+* MongoDB Spark Connector v2.0.0-rc0
+* MongoDB v3.2.x
+* Python v2.7.x
+
 ### Starting up 
 
 You can start by running command : 
